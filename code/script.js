@@ -44,7 +44,7 @@ const count = () => {
 get("startbtn").onclick = () => {
     if (!flag) {
         flag = true;
-        intervalHandler = setInterval(count, 10);
+        intervalHandler = setInterval(count, 1000);
         get("tablo").style.background = "green";
     }
 }
