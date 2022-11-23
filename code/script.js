@@ -10,13 +10,13 @@ const get = id => document.getElementById(id);
 const count = () => {
     counter++;
     h = Math.floor(counter / 3600);
-    if (h <= 9) {
+    if (h < 10) {
         get("hour").innerHTML = "0" + h;
     } else {
         get("hour").innerHTML = h;
     }
     m = Math.floor((Math.floor(counter - 3600 * h)) / 60);
-    if (m <= 9) {
+    if (m < 10) {
         get("min").innerHTML = "0" + m;
     } else {
         get("min").innerHTML = m;
@@ -24,7 +24,7 @@ const count = () => {
     if (counter < 60) {
         s = counter;
     }
-    if (counter <= 9) {
+    if (counter < 10) {
         get("sec").innerHTML = "0" + counter;
 
     } else {
@@ -33,7 +33,7 @@ const count = () => {
     if (counter > 60) {
         s = counter - Math.floor(h * 3600) - Math.floor(m * 60);
     }
-    if (s < 9) {
+    if (s < 10) {
         get("sec").innerHTML = "0" + s;
 
     } else {
